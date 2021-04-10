@@ -1,0 +1,36 @@
+<html>
+  <%- include('./partials/header.ejs',{title:"Delete Page"}); %>
+  <body class="bg-dark">
+    
+    <h1 class="text-light text-center p-2">Add User</h1>
+    <form
+      class="mx-4"
+      action="http://localhost:3000/user/delete"
+      method="POST"
+      id="form"
+    >
+      <div class="mb-3">
+        <label for="id" class="form-label text-light">Enter ID</label>
+        <input
+          type="text"
+          class="form-control w-50"
+          id="id"
+          name="id"
+        />
+      </div>
+      <button class="btn btn-danger" type="submit" id="buttonid" onclick="myFunction();">
+        Delete
+      </button>
+    </form>
+
+    <script>
+      function myFunction() {
+        let form = document.getElementById("form");
+        const salary = document.getElementById("id").value;
+        alert(salary)
+        form.action = form.action +'/'+ salary;
+        // form.submit();
+      }
+    </script>
+  </body>
+</html>

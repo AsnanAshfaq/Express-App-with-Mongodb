@@ -1,0 +1,80 @@
+<html lang="en">
+    <%- include('./partials/header.ejs',{title:"Home Page"}); %>
+  <body class="bg-dark">
+    <a href="/">
+      <h1 class="text-light text-center p-2">Users</h1>
+    </a>
+    
+    <div class="container-fluid">
+      <div class="row mx-4 mb-3">
+        <div class="col">
+            <a class="btn btn-primary w-100" href="/addUser" role="button">Add User</a>
+            
+        </div>
+
+        <div class="col">
+            <a class="btn btn-secondary w-100" href="/updateUser" role="button">Update User</a>
+            
+        </div>
+        <div class="col">
+            <a class="btn btn-danger w-100" href="/deleteUser" role="button">Delete User</a>
+            
+        </div>
+      </div>
+    </div>
+    <% if (user) { %> <% user.forEach(function(user){ %>
+    <ul class="bg-light mx-4">
+      <li>
+        <div class="d-flex flex-row">
+          <h5>
+            ID
+            <h6 class="pl-3 mt-1"><%= user._id %></h6>
+          </h5>
+        </div>
+      </li>
+      <li>
+        <div class="d-flex flex-row">
+          <h5>
+            First Name
+            <h6 class="pl-3 mt-1"><%= user.first_name %></h6>
+          </h5>
+        </div>
+      </li>
+      <li>
+        <div class="d-flex flex-row">
+          <h5>
+            Last Name
+            <h6 class="pl-3 mt-1"><%= user.last_name %></h6>
+          </h5>
+        </div>
+      </li>
+      <li>
+        <div class="d-flex flex-row">
+          <h5>
+            Date of Birth
+            <h6 class="pl-3 mt-1"><%= user.date_of_birth %></h6>
+          </h5>
+        </div>
+      </li>
+      <li>
+        <div class="d-flex flex-row">
+          <h5>
+            Experience
+            <h6 class="pl-3 mt-1"><%= user.experience %></h6>
+          </h5>
+        </div>
+      </li>
+      <li>
+        <div class="d-flex flex-row">
+          <h5>
+            Salary
+            <h6 class="pl-3 mt-1"><%= user.salary %></h6>
+          </h5>
+        </div>
+      </li>
+    </ul>
+    <% }); %> <% } %>
+
+    <script></script>
+  </body>
+</html>
